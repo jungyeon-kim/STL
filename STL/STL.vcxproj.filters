@@ -13,5 +13,135 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\98.etc">
+      <UniqueIdentifier>{d001fecd-e0c4-4fa9-a392-95b8d6a50114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.String">
+      <UniqueIdentifier>{13e5fe95-32c1-4041-ab85-8fbf3a7def82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\0.fstream">
+      <UniqueIdentifier>{19e700c9-2d59-41f6-b2c5-8ef0a08d39fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\1.sequenceContainer">
+      <UniqueIdentifier>{7c672749-6086-4c1d-b04b-b0d8efdb6558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\2.associativeContainer">
+      <UniqueIdentifier>{8f0ae15c-00b2-4e22-8e7f-6a51dd3684cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\3.algorithm">
+      <UniqueIdentifier>{64ffdf6a-b798-4de9-8fa2-03d6f48fa4da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\4.dataStructure">
+      <UniqueIdentifier>{b9840296-59ed-4abb-8392-d7ea7dcbccd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\0.fstream">
+      <UniqueIdentifier>{952b2a10-9609-44b3-8267-b18f2b489324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\99.String">
+      <UniqueIdentifier>{517815f0-89fe-4f80-922f-d1b808d0ad44}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="0.callableType.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="1.class자원할당.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="2.smartPointer.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="3.iterator.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="4.iterator2.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="all_of.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="array.cpp">
+      <Filter>소스 파일\1.sequenceContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_search.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="count.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="deque.cpp">
+      <Filter>소스 파일\1.sequenceContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="distance.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="find.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="fstream01.cpp">
+      <Filter>소스 파일\0.fstream</Filter>
+    </ClCompile>
+    <ClCompile Include="fstream02.cpp">
+      <Filter>소스 파일\0.fstream</Filter>
+    </ClCompile>
+    <ClCompile Include="fstream03.cpp">
+      <Filter>소스 파일\0.fstream</Filter>
+    </ClCompile>
+    <ClCompile Include="list.cpp">
+      <Filter>소스 파일\1.sequenceContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>소스 파일\2.associativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="max_element.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="save.cpp">
+      <Filter>소스 파일\0.fstream</Filter>
+    </ClCompile>
+    <ClCompile Include="set.cpp">
+      <Filter>소스 파일\2.associativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="sort.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="stack.cpp">
+      <Filter>소스 파일\4.dataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>소스 파일\99.String</Filter>
+    </ClCompile>
+    <ClCompile Include="Iter.cpp">
+      <Filter>소스 파일\99.String</Filter>
+    </ClCompile>
+    <ClCompile Include="unorderedMap.cpp">
+      <Filter>소스 파일\2.associativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="unorderedSet.cpp">
+      <Filter>소스 파일\2.associativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="vector.cpp">
+      <Filter>소스 파일\1.sequenceContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="copy.cpp">
+      <Filter>소스 파일\3.algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="5.anagram.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="6.bigNumber.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="save.h">
+      <Filter>헤더 파일\0.fstream</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>헤더 파일\99.String</Filter>
+    </ClInclude>
+    <ClInclude Include="Iter.h">
+      <Filter>헤더 파일\99.String</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
