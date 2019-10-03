@@ -45,21 +45,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="0.callableType.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
-    <ClCompile Include="1.class자원할당.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
-    <ClCompile Include="2.smartPointer.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
-    <ClCompile Include="3.iterator.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
-    <ClCompile Include="4.iterator2.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
     <ClCompile Include="all_of.cpp">
       <Filter>소스 파일\4.algorithm</Filter>
     </ClCompile>
@@ -126,12 +111,6 @@
     <ClCompile Include="copy.cpp">
       <Filter>소스 파일\4.algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="5.anagram.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
-    <ClCompile Include="6.bigNumber.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
     <ClCompile Include="queue.cpp">
       <Filter>소스 파일\3.containerAdapter</Filter>
     </ClCompile>
@@ -143,6 +122,18 @@
     </ClCompile>
     <ClCompile Include="stack.cpp">
       <Filter>소스 파일\3.containerAdapter</Filter>
+    </ClCompile>
+    <ClCompile Include="3.smartPointer.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="4.bigNumber.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="1.iterator.cpp">
+      <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="2.callableType.cpp">
+      <Filter>소스 파일\98.etc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

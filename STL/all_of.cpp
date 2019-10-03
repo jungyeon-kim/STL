@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// all_of:	begin부터 end까지 특정 조건을 만족할 경우 true를 반환
+// all_of: begin부터 end까지 특정 조건을 만족할 경우 true를 반환
 
 template <typename Iter, typename Pred>
 bool myAll_of(Iter begin, Iter end, Pred ty)

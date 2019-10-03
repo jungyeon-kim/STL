@@ -6,8 +6,7 @@
 
 using namespace std;
 
-// copy 알고리즘 구현하기
-// copy(어디부터, 어디까지, 어디에) -> 세 인자 모두 반복자 형태
+// copy: ~부터 ~까지를 ~에 복제한다.
 
 template <typename T, typename U>
 inline void myCopy(T begin, T end, U target)

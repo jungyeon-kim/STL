@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// binary_search: "정렬되어 있는" begin에서 end중 특정 조건을 만족할 경우 true를 반환
+// binary_search: "정렬되어 있는" begin에서 end중 특정 조건을 만족할 경우 true를 반환 (이진탐색)
 
 int main()
 {

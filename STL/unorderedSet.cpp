@@ -13,6 +13,10 @@ using namespace std;
 	2.	정렬되지 않는다는 것을 제외하고는 set과 같다.
 */
 
+/*
+	find(): 시간복잡도: O(1) -> set보다 빠르다. but, 메모리를 희생
+*/
+
 
 int main()
 {

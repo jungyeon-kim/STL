@@ -18,7 +18,7 @@ using namespace std;
 		접근:		vector보단 느리고, list보단 빠르다.
 	2.	key가 원소이며 중복이 불가하다. (multiset은 가능)
 	3.	항목이 저장될 때, 순서를 가진다. (default가 less여서 오름차순으로 정렬된다. 내림차순은 greater)
-	4.	map과 마찬가지로 내부함수로 find()가 존재한다.
+	4.	map과 마찬가지로 내장함수로 find()가 존재한다.
 	5.	임의로 내부 값을 수정할 수 없다. -> 모든 타입이 항상 const이다.
 */
 
