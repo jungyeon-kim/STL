@@ -27,9 +27,10 @@ using namespace std;
 	push_back():			인자로서 필요한 임시객체를 생성 후 값 복사가 일어난다. (생성자, 이동복사생성자 호출)
 	emplace_back():			인자로서 필요한 객체를 컨테이너에 바로 생성한다. (생성자 호출)
 	reserve():				()개가 들어갈 공간을 잡아준다. -> ()개까지 공간재할당(복사생성자호출)을 막아준다.
-	erase(remove(), end()):	remove()가 해당 값들을 다음값으로 덮어씌운다. -> 의미없는 값들이 뒤에 생기고 
-							그 영역의 시작을 가리키는 반복자 반환 -> erase()가 해당 값들의 
-							remove() 반환값부터 end()까지 데이터만 삭제 (capacity는 변함없음)
+	erase(remove(), end()):	vector는 remove()가 내장되지 않아 특정값을 지울 수 없어 이와 같이 사용한다.
+							remove()가 해당 값들을 다음값으로 덮어씌운다. -> 의미없는 값들이 뒤에 생기고 
+							그 영역의 시작을 가리키는 반복자 반환. 하지만, 의무없는 값들 때문에 size는 변함이 없다.
+							따라서, erase()를 이용해 remove() 반환값부터 end()까지 데이터만 삭제 (capacity는 변함없음)
 */
 
 
@@ -55,19 +56,15 @@ void solution1()
 			return left.getP() < right.getP();
 		});
 
-	for (auto i = v.begin(); i != v.end(); ++i)
-	{
-		cout << *i << endl;
-	}
+	for (const auto& i : v)		// 순회방법 1 (추천)
+		cout << i << endl;
 
 	cout << endl;
 
 	sort(v.begin(), v.end());	// 클래스 내부 <연산자 오버로딩 때문에 세번째 인자 불필요.
 
-	for (auto i = v.begin(); i != v.end(); ++i)
-	{
-		cout << *i << endl;
-	}
+	for (auto i = v.cbegin(); i != v.cend(); ++i)	// 순회방법 2
+		cout << *i << endl;	// 반복자는 포인터를 반환하기 떄문에 역참조로 값을 가져와야함.
 }
 
 // 입력자료 - 키보드
@@ -84,7 +81,7 @@ void solution2()
 }
 
 // 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
-// remove_if로 e를 제거한다.
+// remove_if로 e를 제거한다. (erase에는 if기능이 없다.)
 // 공백까지 처리하기위해 istreambuf_iterator, ostreambuf_ierator를 사용
 
 void solution3()
@@ -124,7 +121,7 @@ void testVector()
 
 int main()
 {
-	testVector();
+	//testVector();
 	//solution1();
 	//solution2();
 	//solution3();

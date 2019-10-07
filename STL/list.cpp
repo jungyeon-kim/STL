@@ -22,10 +22,13 @@ using namespace std;
 */
 
 /*
-	remove():	vector와 다르게 내장함수로 존재한다. (remove 후 erase 해주지 않아도 됨)
-	merge():	list를 합친다. -> 정렬된 list에만 사용가능하다.
-	unique():	중복되는 값을 지운다.
-	splice():	원하는 구간을 빼온다.
+	sort():					std::sort()는 랜덤액세스 반복자가 필요하기때문에 list에 사용할 수 없다.
+							따라서, 내장함수로 sort()가 존재한다.
+	remove(), remove_if():	vector와 다르게 내장함수로 존재한다. std::remove와 다르게 삭제되면 size가 줄어든다.
+							(remove 후 erase 해주지 않아도 됨)
+	merge():				list를 합친다. -> 정렬된 list에만 사용가능하다.
+	unique():				중복되는 값을 지운다.
+	splice():				원하는 구간을 빼온다.
 */
 
 
@@ -81,8 +84,34 @@ void solution2()
 	copy(lst.begin(), lst.end(), ostream_iterator<string>(cout, "\n"));
 }
 
+// std::remove와 list에 내장된 remove에 대한 차이를 알아보자.
+
+void solution3()
+{
+	list<int> lst1{};
+	list<int> lst2{};
+
+	for (int i = 0; i < 10; ++i)
+	{
+		lst1.emplace_back(i + 1);
+		lst2.emplace_back(i + 1);
+	}
+
+	lst1.remove(5);							// 내장 remove()
+	remove(lst2.begin(), lst2.end(), 5);	// 표준 remove()
+
+	cout << "<내장 remove()>" << endl;
+	for (const auto& i : lst1) cout << i << " ";
+
+	cout << endl;
+
+	cout << "<표준 remove()>" << endl;
+	for (const auto& i : lst2) cout << i << " ";
+}
+
 int main()
 {
-	solution1();
+	//solution1();
 	//solution2();
+	solution3();
 }
