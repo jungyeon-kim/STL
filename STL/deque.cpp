@@ -1,5 +1,7 @@
 #include <iostream>
 #include <deque>
+#include <fstream>
+#include <iterator>
 #include "String.h"
 
 using namespace std;
@@ -17,8 +19,6 @@ using namespace std;
 
 
 // 소스.cpp를 불러와서 cmd창에 역순으로 출력하라
-#include <fstream>
-#include <iterator>
 
 void solution1()
 {

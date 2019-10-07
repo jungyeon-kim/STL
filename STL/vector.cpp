@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <random>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
 #include "String.h"
 
 using namespace std;
@@ -34,7 +38,6 @@ using namespace std;
 // String의 문자를 오름차순으로 정렬
 // v를 String의 길이 오름차순으로 정렬
 // 결과를 화면에 출력
-#include <algorithm>
 
 void solution1()
 {
@@ -70,9 +73,6 @@ void solution1()
 // 입력자료 - 키보드
 // 출력자료 - 화면
 // 키보드에서 string을 입력받아 정렬 후 화면 출력하라.
-#include <string>
-#include <iterator>
-#include <algorithm>
 
 void solution2()
 {
@@ -86,9 +86,6 @@ void solution2()
 // 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
 // remove_if로 e를 제거한다.
 // 공백까지 처리하기위해 istreambuf_iterator, ostreambuf_ierator를 사용
-#include <fstream>
-#include <iterator>
-#include <algorithm>
 
 void solution3()
 {

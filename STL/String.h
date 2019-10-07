@@ -13,10 +13,10 @@ public:
 	String(int n);
 	~String();
 	String(const String& rhs);
-	String(String&& rhs);
+	String(String&& rhs) noexcept;
 
 	String& operator=(const String& rhs);
-	String& operator=(String&& rhs);
+	String& operator=(String&& rhs) noexcept;
 	friend std::ostream& operator<<(std::ostream& os, const String& rhs);
 	bool operator==(const String& rhs) const;
 	bool operator<(const String& rhs) const;

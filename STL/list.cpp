@@ -1,5 +1,9 @@
 #include <iostream>
 #include <list>
+#include <fstream>
+#include <iterator>
+#include <string>
+#include <algorithm>
 #include "String.h"
 
 using namespace std;
@@ -48,10 +52,6 @@ void solution1()
 // "소스.cpp" 파일을 읽어라
 // 길이순으로 정렬하라 -> 여기까진 벡터를 써도되지만
 // 길이가 4인 단어를 따로 빼서 "길이4.txt"에 저장하라 -> 중간삭제때문에 리스트를 써야함
-#include <fstream>
-#include <iterator>
-#include <string>
-#include <algorithm>
 
 void solution2()
 {

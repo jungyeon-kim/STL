@@ -14,7 +14,7 @@ private:
 public:
 	Stack() : topIdx{ -1 } { p = make_unique<T[]>(MAX_SIZE); }
 	~Stack() = default;
-
+	
 	void push(T num) { p[++topIdx] = num; }
 	int pop()
 	{
