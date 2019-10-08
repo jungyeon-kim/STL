@@ -135,6 +135,9 @@
     <ClCompile Include="2.callableType.cpp">
       <Filter>소스 파일\98.etc</Filter>
     </ClCompile>
+    <ClCompile Include="hash.cpp">
+      <Filter>소스 파일\2.associativeContainer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="save.h">

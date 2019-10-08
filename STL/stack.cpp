@@ -8,5 +8,12 @@ using namespace std;
 */
 
 /*
-	1. 삽입, 삭제에 효율적이다.
+	1.	FILO(선입후출) 또는 LIFO(후입선출)로 동작한다.
+	2.	삽입, 삭제에 효율적이다.
+	3.	defalut 템플릿 파라미터로 deque을 사용한다.
 */
+
+int main()
+{
+
+}

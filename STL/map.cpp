@@ -17,15 +17,20 @@ using namespace std;
 		삽입, 삭제:	vector보단 빠르고, list보단 느리다.
 		접근:		vector보단 느리고, list보단 빠르다.
 	2.	dictionary형태 -> key와 value가 한 쌍을 이루고 중복이 불가하다. (multimap은 가능)
-	3.	항목이 저장될 때, 순서를 가진다. (default가 less여서 오름차순으로 정렬된다. 내림차순은 greater)
+		허나, multimap은 중복되는 key값이 존재할 수 있기때문에 []연산자를 지원하지 않는다.
+	3.	항목이 저장될 때, key를 기준으로 순서를 가진다. (default가 less여서 오름차순으로 정렬된다. 내림차순은 greater)
 	4.	일반 find()가 아닌 map에 내장된 find()를 사용한다. (이진탐색 알고리즘) -> O(log n)
 	5.	배열의 인덱스(key 값)로 단순히 int형이 아닌 string같은 임의의 타입을 사용할 수 있다.
 */
 
 /*
-	pair<T, U>: 두 데이터가 한 쌍을 이루게 해줌 -> make_pair()로 더 간단히 가능
-	insert(): 객체를 생성해 컨테이너에 복사시키므로 key, value를 쌍으로 가지는 객체화(make_pair)를 시켜야 한다.
-	emplace(): 컨테이너 자체에 객체를 생성하므로 객체화(make_pair)가 필요없다.
+	insert():		객체를 생성해 컨테이너에 복사시키므로 key, value를 쌍으로 가지는 객체화(make_pair)를 시켜야 한다.
+	emplace():		컨테이너 자체에 객체를 생성하므로 그룹핑(make_pair)이 필요없다.
+	equal_range():	내장함수로 존재한다. (lower_bound()와 upper_bound() 또한 지원한다.)
+	first:			key멤버에 접근가능
+	second:			value멤버에 접근가능
+	pair<T, U>:		두 데이터가 한 쌍을 이루게 해줌 -> make_pair()로 더 간단히 가능
+					마찬가지로 first와 second가 존재한다.
 */
 
 
@@ -163,7 +168,7 @@ void solution5()
 		if (i.first[0] == 'a')
 			cnt++;*/
 
-			// 효율적인 방법
+	// 효율적인 방법
 	auto beginA = words.lower_bound("a");
 	auto endA = words.lower_bound("b");
 
