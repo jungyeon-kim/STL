@@ -21,12 +21,14 @@ using namespace std;
 		하지만, 그외의 인덱스에서는 뒤에 있는 모든 인덱스들을 밀거나 당기는 작업을 해야해서 O(N-p)로 느리다.
 	3.  값을 넣을 공간이 없으면 더 큰 공간(원래크기의 1.5배)을 재할당한다.
 	4.  멤버함수 -> size, capacity, data (크기, 할당가능공간, 저장위치)
+	5.	삭제동작시 뒷부분 요소들이 밀고 당겨지기때문에 루프문에서는 주의가 필요하다.
 */
 
 /*
 	push_back():			인자로서 필요한 임시객체를 생성 후 값 복사가 일어난다. (생성자, 이동복사생성자 호출)
 	emplace_back():			인자로서 필요한 객체를 컨테이너에 바로 생성한다. (생성자 호출)
 	reserve():				()개가 들어갈 공간을 잡아준다. -> ()개까지 공간재할당(복사생성자호출)을 막아준다.
+	erase():				삭제동작 후, 다음 iterator를 반환한다. (루프안에서 삭제동작시 주의가 필요하다.)
 	erase(remove(), end()):	vector는 remove()가 내장되지 않아 특정값을 지울 수 없어 이와 같이 사용한다.
 							remove()가 해당 값들을 다음값으로 덮어씌운다. -> 의미없는 값들이 뒤에 생기고 
 							그 영역의 시작을 가리키는 반복자 반환. 하지만, 의무없는 값들 때문에 size는 변함이 없다.
@@ -39,7 +41,6 @@ using namespace std;
 // String의 문자를 오름차순으로 정렬
 // v를 String의 길이 오름차순으로 정렬
 // 결과를 화면에 출력
-
 void solution1()
 {
 	vector<String> v{};	// 아직 객체가 생성된 상태가 아님
@@ -70,7 +71,6 @@ void solution1()
 // 입력자료 - 키보드
 // 출력자료 - 화면
 // 키보드에서 string을 입력받아 정렬 후 화면 출력하라.
-
 void solution2()
 {
 	vector<string> v{ istream_iterator<string>(cin), istream_iterator<string>() };	// (키보드 시작, 키보드 끝)
@@ -83,7 +83,6 @@ void solution2()
 // 소스.cpp에서 e를 제거한 결과를 e없는소스.cpp에 저장하라
 // remove_if로 e를 제거한다. (erase에는 if기능이 없다.)
 // 공백까지 처리하기위해 istreambuf_iterator, ostreambuf_ierator를 사용
-
 void solution3()
 {
 	ifstream in{ "소스.cpp" };
@@ -97,6 +96,38 @@ void solution3()
 	v.erase(p, v.end());
 
 	copy(v.begin(), v.end(), ostreambuf_iterator<char>(out));
+}
+
+// 벡터의 삭제동작시 주의사항에 대해서 알아보자.
+// 인덱스 루프로 삭제하는 경우와 반복자 루프로 삭제하는 경우가 있다.
+// 범위기반포문은 ++연산을 사용자가 컨트롤할 수 없으므로 사용하면 안된다.
+void solution4()
+{
+	vector<int> v1{};
+	vector<int> v2{};
+
+	for (int i = 0; i < 10; ++i)
+	{
+		v1.emplace_back(i);
+		v2.emplace_back(i);
+	}
+
+	//	index
+	for (int i = 0; i < v1.size();)
+	{
+		if (v1[i] % 2 == 0) v1.erase(v1.begin() + i);	// index i는 iterator에 접근하지 않는다.
+		else ++i;										// 따라서, erase()의 반환되는 다음 iterator가 필요없다.
+	}
+	//	iterator
+	for (auto i = v2.begin(); i < v2.end();)
+	{
+		if (*i % 2 == 0) i = v2.erase(i);				// erase()시 iterator i가 무효화되므로 erase()가 반환하는
+		else ++i;										// 다음 iterator를 i에 대입한다.
+	}
+
+	for (const auto& i : v1) cout << i << " ";
+	cout << endl;
+	for (const auto& i : v2) cout << i << " ";
 }
 
 // 벡터의 이해를 돕기위한 함수.
@@ -125,4 +156,5 @@ int main()
 	//solution1();
 	//solution2();
 	//solution3();
+	solution4();
 }
