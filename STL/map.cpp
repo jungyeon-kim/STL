@@ -9,13 +9,13 @@ using namespace std;
 
 /*
 	연관 컨테이너 "map"
-	사용처:	key와 value가 쌍을 이루고 삽입, 삭제, 접근에 대한 고른 성능이 필요할 경우
+	사용처:	key와 value가 쌍을 이루고 삽입, 삭제, 탐색에 대한 고른 성능이 필요할 경우
 */
 
 /*
-	1.	삽입, 삭제, 접근 성능이 모두 O(logN)이다.
+	1.	삽입, 삭제, 탐색 성능이 모두 O(logN)이다.
 		삽입, 삭제:	vector보단 빠르고, list보단 느리다.
-		접근:		vector보단 느리고, list보단 빠르다.
+		탐색:		vector보단 느리고, list보단 빠르다.
 	2.	dictionary형태 -> key와 value가 한 쌍을 이루고 중복이 불가하다. (multimap은 가능)
 		허나, multimap은 중복되는 key값이 존재할 수 있기때문에 []연산자를 지원하지 않는다.
 	3.	항목이 저장될 때, key를 기준으로 순서를 가진다. (default가 less여서 오름차순으로 정렬된다. 내림차순은 greater)

@@ -21,7 +21,8 @@ using namespace std;
 		하지만, 그외의 인덱스에서는 뒤에 있는 모든 인덱스들을 밀거나 당기는 작업을 해야해서 O(N-p)로 느리다.
 	3.  값을 넣을 공간이 없으면 더 큰 공간(원래크기의 1.5배)을 재할당한다.
 	4.  멤버함수 -> size, capacity, data (크기, 할당가능공간, 저장위치)
-	5.	삭제동작시 뒷부분 요소들이 밀고 당겨지기때문에 루프문에서는 주의가 필요하다.
+	5.	루프에서 삭제동작시, iterator때문에 주의가 필요하다. 이는 모든 컨테이너에 적용되는 사례이다.
+		추가적으로 원시 포인터를 저장할 시, 메모리 해제작업도 해주어야한다. -> 따라서, 스마트포인터를 추천
 */
 
 /*
@@ -111,19 +112,20 @@ void solution4()
 		v1.emplace_back(i);
 		v2.emplace_back(i);
 	}
+	int size;
 
 	//	index
 	for (int i = 0; i < v1.size();)
 	{
-		if (v1[i] % 2 == 0) v1.erase(v1.begin() + i);	// index i는 iterator에 접근하지 않는다.
-		else ++i;										// 따라서, erase()의 반환되는 다음 iterator가 필요없다.
-	}
+		if (v1[i] % 2 == 0) v1.erase(v1.begin() + i);	// v1.begin()은 갱신된다. 삭제된 iterator를 지울 일이 없다.
+		else ++i;										// ++i는 index를 더한다.
+	}													// 따라서, erase()의 반환되는 다음 iterator를 알필요가 없다.
 	//	iterator
 	for (auto i = v2.begin(); i < v2.end();)
 	{
-		if (*i % 2 == 0) i = v2.erase(i);				// erase()시 iterator i가 무효화되므로 erase()가 반환하는
-		else ++i;										// 다음 iterator를 i에 대입한다.
-	}
+		if (*i % 2 == 0) i = v2.erase(i);				// i에 대입안하면, 삭제된 iterator를 또 지우려한다. (에러)
+		else ++i;										// ++i는 iterator를 더한다.
+	}													// 따라서, erase()의 반환되는 다음 iterator를 알아야한다.
 
 	for (const auto& i : v1) cout << i << " ";
 	cout << endl;
