@@ -123,12 +123,6 @@
     <ClCompile Include="stack.cpp">
       <Filter>소스 파일\3.containerAdapter</Filter>
     </ClCompile>
-    <ClCompile Include="3.smartPointer.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
-    <ClCompile Include="4.bigNumber.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
     <ClCompile Include="1.iterator.cpp">
       <Filter>소스 파일\98.etc</Filter>
     </ClCompile>
@@ -137,6 +131,9 @@
     </ClCompile>
     <ClCompile Include="hash.cpp">
       <Filter>소스 파일\2.associativeContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="3.bigNumber.cpp">
+      <Filter>소스 파일\98.etc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

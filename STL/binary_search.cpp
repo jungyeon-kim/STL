@@ -4,7 +4,9 @@
 
 using namespace std;
 
-// binary_search: "정렬되어 있는" begin에서 end중 특정 조건을 만족할 경우 true를 반환 (이진탐색)
+// binary_search: "정렬되어 있는" begin에서 end중 특정 조건이나 값을 만족할 경우 true를 반환 (이진탐색)
+
+// 기본적으로 <연산자를 사용하며 ==연산자 대신 !(a < b) && !(b < a)과 같은 식으로 같은지 여부를 판단한다.
 
 int main()
 {

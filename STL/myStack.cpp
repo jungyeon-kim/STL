@@ -16,9 +16,9 @@ public:
 	~Stack() = default;
 	
 	void push(T num) { p[++topIdx] = num; }
-	int pop()
+	void pop()
 	{
-		if (empty()) return -1;
+		if (empty()) return;
 		p[topIdx--] = NULL;
 	}
 	int size() const { return topIdx + 1; }

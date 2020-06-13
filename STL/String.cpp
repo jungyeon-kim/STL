@@ -15,11 +15,11 @@ String::String(int n) : num{ n }
 	for (int i = 0; i < num; ++i)
 		p[i] = uid(dre);
 
-	//cout << "String(int n): " << this << " HEAP:" << &p << endl;
+	cout << "String(int n): " << this << " HEAP:" << &p << endl;
 }
 String::~String()
 {
-	//cout << "~String(): " << this << " HEAP: " << &p << endl;
+	cout << "~String(): " << this << " HEAP: " << &p << endl;
 }
 String::String(const String& rhs)
 {
@@ -28,33 +28,35 @@ String::String(const String& rhs)
 	for (int i = 0; i < rhs.num; ++i)
 		p[i] = rhs.p[i];
 
-	//cout << "String(const String &rhs): " << this << " 원본: " << &rhs << " HEAP: " << &p << endl;
+	cout << "String(const String &rhs): " << this << " 원본: " << &rhs << " HEAP: " << &p << endl;
 }
 String::String(String&& rhs) noexcept
 {
 	num = rhs.num;			// 일반자료형에 이동시맨틱이 정의 안되있어서 move가 의미없음
 	p = std::move(rhs.p);	// unique_ptr은 복사가 불가능하기에 move를 이용해 이동시맨틱을 사용
 
-	//cout << "String(String &&rhs): " << this << " 원본: " << &rhs << " HEAP: " << &p << endl;
+	cout << "String(String &&rhs): " << this << " 원본: " << &rhs << " HEAP: " << &p << endl;
 }
 
 String& String::operator=(const String& rhs)
 {
+	if (this == &rhs) return *this;
 	num = rhs.num;
 	p = make_unique<char[]>(rhs.num);
 	for (int i = 0; i < rhs.num; ++i)
 		p[i] = rhs.p[i];
 
-	//cout << "String& operator=(const String&rhs)" << endl;
+	cout << "String& operator=(const String&rhs)" << endl;
 
 	return *this;
 }
 String& String::operator=(String&& rhs) noexcept
 {
+	if (this == &rhs) return *this;
 	num = rhs.num;
 	p = std::move(rhs.p);
 
-	//cout << "String& operator=(String &&rhs)" << endl;
+	cout << "String& operator=(String &&rhs)" << endl;
 
 	return *this;
 }

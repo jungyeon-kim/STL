@@ -26,13 +26,13 @@ using namespace std;
 */
 
 /*
-	push_back():			인자로서 필요한 임시객체를 생성 후 값 복사가 일어난다. (생성자, 이동복사생성자 호출)
-	emplace_back():			인자로서 필요한 객체를 컨테이너에 바로 생성한다. (생성자 호출)
+	push_back():			인자로서 필요한 임시객체를 생성 후 복사 or 이동이 일어난다. (생성자, 복사생성자 호출)
+	emplace_back():			인자로서 필요한 객체를 컨테이너에 바로 생성한다. (생성자 or 복사생성자 호출)
 	reserve():				()개가 들어갈 공간을 잡아준다. -> ()개까지 공간재할당(복사생성자호출)을 막아준다.
 	erase():				삭제동작 후, 다음 iterator를 반환한다. (루프안에서 삭제동작시 주의가 필요하다.)
 	erase(remove(), end()):	vector는 remove()가 내장되지 않아 특정값을 지울 수 없어 이와 같이 사용한다.
 							remove()가 해당 값들을 다음값으로 덮어씌운다. -> 의미없는 값들이 뒤에 생기고 
-							그 영역의 시작을 가리키는 반복자 반환. 하지만, 의무없는 값들 때문에 size는 변함이 없다.
+							그 영역의 시작을 가리키는 반복자 반환. 하지만, 의미없는 값들 때문에 size는 변함이 없다.
 							따라서, erase()를 이용해 remove() 반환값부터 end()까지 데이터만 삭제 (capacity는 변함없음)
 */
 
@@ -44,11 +44,10 @@ using namespace std;
 // 결과를 화면에 출력
 void solution1()
 {
-	vector<String> v{};	// 아직 객체가 생성된 상태가 아님
+	vector<String> v{};		// 아직 객체가 생성된 상태가 아님
 
 	default_random_engine dre;
 	uniform_int_distribution<> uid{ 10,	20 };
-
 
 	for (int i = 0; i < 20; ++i)
 		v.emplace_back(uid(dre));
@@ -112,7 +111,6 @@ void solution4()
 		v1.emplace_back(i);
 		v2.emplace_back(i);
 	}
-	int size;
 
 	//	index
 	for (int i = 0; i < v1.size();)
@@ -154,9 +152,9 @@ void testVector()
 
 int main()
 {
-	//testVector();
+	testVector();
 	//solution1();
 	//solution2();
 	//solution3();
-	solution4();
+	//solution4();
 }

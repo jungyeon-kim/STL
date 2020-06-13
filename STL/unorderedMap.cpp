@@ -12,7 +12,7 @@ using namespace std;
 using namespace std::chrono;
 
 /*
-	비정렬 연관 컨테이너 "unordered_map" -> 해시테이블
+	비정렬 연관 컨테이너 "unordered_map" -> 동적 해시테이블
 	사용처:	정렬될 필요가 없고,
 			key와 value가 쌍을 이루고 삽입, 삭제, 탐색에 대한 고른 성능이 필요할 경우
 */
@@ -23,7 +23,9 @@ using namespace std::chrono;
 */
 
 /*
-	find(): 시간복잡도: O(1) -> map보다 빠르다. but, 메모리를 희생
+	find():			시간복잡도: O(1) -> map보다 빠르다. but, 메모리를 희생
+	size():			들어있는 원소의 개수
+	bucket_size():	버켓의 개수
 */
 
 class Dog
@@ -55,7 +57,7 @@ struct DogHash
 
 // 맵과 언오더드맵에 랜덤정수 1000만개를 담는다.
 // find함수를 호출하여 찾는데 걸리는 시간을 잰다.
-constexpr int MAX{ 1000000 };
+constexpr int MAX{ 10000 };
 
 void solution1()
 {
@@ -67,7 +69,7 @@ void solution1()
 	while (m.size() != MAX * 10)
 		m.emplace(intUid(intDre), ++i);
 	// unorderedMap 정수생성
-	unordered_map<int, int> um{ m.begin(), m.end(), 1000000 };
+	unordered_map<int, int> um{ m.begin(), m.end(), 10000 };
 	// vector 정수생성
 	vector<int> v{};
 	v.reserve(MAX);
@@ -100,6 +102,8 @@ void testUnorderedMap()
 	um.emplace("콩이", 7);
 	um.emplace("해피", 3);
 
+	cout << um.bucket_count() << endl;
+
 	for (int i = 0; i < um.bucket_count(); ++i)
 	{
 		cout << "[" << i << "]";
@@ -115,6 +119,22 @@ void testUnorderedMap()
 
 int main()
 {
+	unordered_map<int, int> um{};
+
+	for (int i = 0; i < 65; ++i)
+		um.emplace(i, i);
+
+	for (int i = 0; i < um.bucket_count(); ++i)
+	{
+		cout << "[" << i << "]";
+		if (um.bucket_size(i))
+		{
+			cout << " - ";
+			for (auto p = um.begin(i); p != um.end(i); ++p)
+				cout << p->second << " ";
+		}
+		cout << endl;
+	}
 	//testUnorderedMap();
-	solution1();
+	//solution1();
 }
