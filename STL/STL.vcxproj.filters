@@ -19,12 +19,6 @@
     <Filter Include="소스 파일\99.String">
       <UniqueIdentifier>{13e5fe95-32c1-4041-ab85-8fbf3a7def82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\1.sequenceContainer">
-      <UniqueIdentifier>{7c672749-6086-4c1d-b04b-b0d8efdb6558}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\2.associativeContainer">
-      <UniqueIdentifier>{8f0ae15c-00b2-4e22-8e7f-6a51dd3684cc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\99.String">
       <UniqueIdentifier>{517815f0-89fe-4f80-922f-d1b808d0ad44}</UniqueIdentifier>
     </Filter>
@@ -34,13 +28,19 @@
     <Filter Include="헤더 파일\0.I/O">
       <UniqueIdentifier>{952b2a10-9609-44b3-8267-b18f2b489324}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\3.containerAdapter">
-      <UniqueIdentifier>{b9840296-59ed-4abb-8392-d7ea7dcbccd3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\4.algorithm">
       <UniqueIdentifier>{64ffdf6a-b798-4de9-8fa2-03d6f48fa4da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\3.containerAdapter\custom">
+    <Filter Include="소스 파일\1.sequence container">
+      <UniqueIdentifier>{7c672749-6086-4c1d-b04b-b0d8efdb6558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\2.associative container">
+      <UniqueIdentifier>{8f0ae15c-00b2-4e22-8e7f-6a51dd3684cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\3.container adapter">
+      <UniqueIdentifier>{b9840296-59ed-4abb-8392-d7ea7dcbccd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\3.container adapter\custom">
       <UniqueIdentifier>{624169a9-9990-414a-96f0-0224c6944459}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -49,7 +49,7 @@
       <Filter>소스 파일\4.algorithm</Filter>
     </ClCompile>
     <ClCompile Include="array.cpp">
-      <Filter>소스 파일\1.sequenceContainer</Filter>
+      <Filter>소스 파일\1.sequence container</Filter>
     </ClCompile>
     <ClCompile Include="binary_search.cpp">
       <Filter>소스 파일\4.algorithm</Filter>
@@ -58,7 +58,7 @@
       <Filter>소스 파일\4.algorithm</Filter>
     </ClCompile>
     <ClCompile Include="deque.cpp">
-      <Filter>소스 파일\1.sequenceContainer</Filter>
+      <Filter>소스 파일\1.sequence container</Filter>
     </ClCompile>
     <ClCompile Include="distance.cpp">
       <Filter>소스 파일\4.algorithm</Filter>
@@ -76,10 +76,10 @@
       <Filter>소스 파일\0.I/O</Filter>
     </ClCompile>
     <ClCompile Include="list.cpp">
-      <Filter>소스 파일\1.sequenceContainer</Filter>
+      <Filter>소스 파일\1.sequence container</Filter>
     </ClCompile>
     <ClCompile Include="map.cpp">
-      <Filter>소스 파일\2.associativeContainer</Filter>
+      <Filter>소스 파일\2.associative container</Filter>
     </ClCompile>
     <ClCompile Include="max_element.cpp">
       <Filter>소스 파일\4.algorithm</Filter>
@@ -88,7 +88,7 @@
       <Filter>소스 파일\0.I/O</Filter>
     </ClCompile>
     <ClCompile Include="set.cpp">
-      <Filter>소스 파일\2.associativeContainer</Filter>
+      <Filter>소스 파일\2.associative container</Filter>
     </ClCompile>
     <ClCompile Include="sort.cpp">
       <Filter>소스 파일\4.algorithm</Filter>
@@ -99,29 +99,20 @@
     <ClCompile Include="Iter.cpp">
       <Filter>소스 파일\99.String</Filter>
     </ClCompile>
-    <ClCompile Include="unorderedMap.cpp">
-      <Filter>소스 파일\2.associativeContainer</Filter>
-    </ClCompile>
-    <ClCompile Include="unorderedSet.cpp">
-      <Filter>소스 파일\2.associativeContainer</Filter>
-    </ClCompile>
     <ClCompile Include="vector.cpp">
-      <Filter>소스 파일\1.sequenceContainer</Filter>
+      <Filter>소스 파일\1.sequence container</Filter>
     </ClCompile>
     <ClCompile Include="copy.cpp">
       <Filter>소스 파일\4.algorithm</Filter>
     </ClCompile>
     <ClCompile Include="queue.cpp">
-      <Filter>소스 파일\3.containerAdapter</Filter>
+      <Filter>소스 파일\3.container adapter</Filter>
     </ClCompile>
     <ClCompile Include="priority_queue.cpp">
-      <Filter>소스 파일\3.containerAdapter</Filter>
-    </ClCompile>
-    <ClCompile Include="myStack.cpp">
-      <Filter>소스 파일\3.containerAdapter\custom</Filter>
+      <Filter>소스 파일\3.container adapter</Filter>
     </ClCompile>
     <ClCompile Include="stack.cpp">
-      <Filter>소스 파일\3.containerAdapter</Filter>
+      <Filter>소스 파일\3.container adapter</Filter>
     </ClCompile>
     <ClCompile Include="1.iterator.cpp">
       <Filter>소스 파일\98.etc</Filter>
@@ -130,10 +121,22 @@
       <Filter>소스 파일\98.etc</Filter>
     </ClCompile>
     <ClCompile Include="hash.cpp">
-      <Filter>소스 파일\2.associativeContainer</Filter>
+      <Filter>소스 파일\2.associative container</Filter>
     </ClCompile>
     <ClCompile Include="3.bigNumber.cpp">
       <Filter>소스 파일\98.etc</Filter>
+    </ClCompile>
+    <ClCompile Include="unordered_map.cpp">
+      <Filter>소스 파일\2.associative container</Filter>
+    </ClCompile>
+    <ClCompile Include="unordered_set.cpp">
+      <Filter>소스 파일\2.associative container</Filter>
+    </ClCompile>
+    <ClCompile Include="my_stack.cpp">
+      <Filter>소스 파일\3.container adapter\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="my_queue.cpp">
+      <Filter>소스 파일\3.container adapter\custom</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
