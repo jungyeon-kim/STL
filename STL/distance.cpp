@@ -5,7 +5,7 @@
 using namespace std;
 
 /*
-	 "정렬된 상태에서"
+	 "정렬된 상태에서" -> logn
 	 distance:		begin이 end까지 도달하는데에 증가된 횟수를 반환
 	 lower_bound:	begin에서 end중 조건에 만족하는 값의 첫 iterator를 반환 (없으면 다음 값)
 	 upper_bound:	begin에서 end중 조건에 만족하는 값의 마지막 다음 iterator를 반환 (없으면 다음 값)

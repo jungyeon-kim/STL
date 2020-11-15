@@ -117,19 +117,7 @@
     <ClCompile Include="1.iterator.cpp">
       <Filter>소스 파일\98.etc</Filter>
     </ClCompile>
-    <ClCompile Include="2.callableType.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
     <ClCompile Include="hash.cpp">
-      <Filter>소스 파일\2.associative container</Filter>
-    </ClCompile>
-    <ClCompile Include="3.bigNumber.cpp">
-      <Filter>소스 파일\98.etc</Filter>
-    </ClCompile>
-    <ClCompile Include="unordered_map.cpp">
-      <Filter>소스 파일\2.associative container</Filter>
-    </ClCompile>
-    <ClCompile Include="unordered_set.cpp">
       <Filter>소스 파일\2.associative container</Filter>
     </ClCompile>
     <ClCompile Include="my_stack.cpp">
@@ -137,6 +125,15 @@
     </ClCompile>
     <ClCompile Include="my_queue.cpp">
       <Filter>소스 파일\3.container adapter\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="unordered_map.cpp">
+      <Filter>소스 파일\2.associative container</Filter>
+    </ClCompile>
+    <ClCompile Include="unordered_set.cpp">
+      <Filter>소스 파일\2.associative container</Filter>
+    </ClCompile>
+    <ClCompile Include="2.bigNumber.cpp">
+      <Filter>소스 파일\98.etc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

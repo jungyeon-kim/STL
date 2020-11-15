@@ -7,7 +7,6 @@ using namespace std;
 // count:		begin부터 end까지 특정 값의 개수를 반환
 // count_if:	begin부터 end까지 특정 조건을 만족하는 값의 개수를 반환
 
-// 제네릭 함수: 템플릿에 의해 타입으로부터 자유로워진 함수
 template <typename Iter, typename Pred>
 size_t myCount_if(Iter begin, Iter end, Pred ty)
 {
