@@ -27,7 +27,7 @@ private:
 	}
 public:
 	Stack() { arr = new T[maxSize]; };
-	Stack(const Stack& rhs) { deepCopy(rhs); cout << "บนป็" << endl; }
+	Stack(const Stack& rhs) { deepCopy(rhs); }
 	~Stack() { if (arr) { delete[] arr; arr = nullptr; } }
 
 	Stack& operator=(const Stack& rhs) { if (arr) delete[] arr; deepCopy(rhs); return *this; }
